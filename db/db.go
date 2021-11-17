@@ -11,9 +11,6 @@ import (
 const (
 	closed dbState = iota
 	opened
-)
-
-const (
 	CurrentFormat = "2.0"
 )
 
@@ -73,16 +70,4 @@ func (dbInst *DB) Open() {
 	}
 	fmt.Printf("DB was successfully opened\n")
 	dbInst.dbState = opened
-}
-
-func main() {
-	dbPath := "./db"
-
-	db := CreateDB(&Conf{
-		DBPath:         dbPath,
-		ExpectedFormat: CurrentFormat,
-	})
-
-	db.Open()
-
 }
